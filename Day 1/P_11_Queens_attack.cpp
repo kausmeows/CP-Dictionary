@@ -1,11 +1,15 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-using namespace std;
+using namespace std; 
 
 void solve(int n, int q, int r, int c, vector <int> &row, vector <int> &col, vector <int> &diagonal1, vector <int> &diagonal2)
 {
     if(row[r] == 0 && col[c] == 0 && diagonal1[c-r+n] == 0 && diagonal2[c+r] == 0)
+
+    /*  Diagonals from top left to bottom right (i.e. \) will follow the pattern that c-r+n is constant.
+        Similarly diagonals from top right to bottom left (i.e. /) will follow the pattern that c+r is constant. */
+
     {
         cout << "YES" << endl;
         row[r] = true;
